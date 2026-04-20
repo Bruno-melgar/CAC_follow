@@ -1,6 +1,7 @@
 """
 Callback functions for the CAC Dashboard.
 """
+import io
 import pandas as pd
 from dash import Input, Output, State, callback
 from dash import dcc, html
@@ -94,7 +95,7 @@ def register_callbacks(app, df):
         if not filtered_json:
             return html.Div("No data available")
 
-        filtered_df = pd.read_json(filtered_json, orient="split")
+        filtered_df = pd.read_json(io.StringIO(filtered_json), orient="split")
         return create_kpi_row(filtered_df, value_col, latest_week)
 
     @app.callback(
@@ -109,7 +110,7 @@ def register_callbacks(app, df):
         if not filtered_json:
             return create_heatmap(pd.DataFrame(), value_col)
 
-        filtered_df = pd.read_json(filtered_json, orient="split")
+        filtered_df = pd.read_json(io.StringIO(filtered_json), orient="split")
         return create_heatmap(filtered_df, value_col)
 
     @app.callback(
@@ -125,7 +126,7 @@ def register_callbacks(app, df):
         if not filtered_json:
             return html.Div("No data available")
 
-        filtered_df = pd.read_json(filtered_json, orient="split")
+        filtered_df = pd.read_json(io.StringIO(filtered_json), orient="split")
         return create_kpi_row(filtered_df, value_col, latest_week)
 
     @app.callback(
@@ -142,7 +143,7 @@ def register_callbacks(app, df):
         if not filtered_json:
             return create_temporal_line_chart(pd.DataFrame(), value_col)
 
-        filtered_df = pd.read_json(filtered_json, orient="split")
+        filtered_df = pd.read_json(io.StringIO(filtered_json), orient="split")
         show_boxplot = boxplot_mode == "boxplot"
         return create_temporal_line_chart(
             filtered_df, value_col, error_type=error_type, show_boxplot=show_boxplot
@@ -160,7 +161,7 @@ def register_callbacks(app, df):
         if not filtered_json:
             return create_replicate_comparison_chart(pd.DataFrame(), value_col)
 
-        filtered_df = pd.read_json(filtered_json, orient="split")
+        filtered_df = pd.read_json(io.StringIO(filtered_json), orient="split")
         return create_replicate_comparison_chart(filtered_df, value_col)
 
     @app.callback(
@@ -174,7 +175,7 @@ def register_callbacks(app, df):
         if not filtered_json:
             return create_rot_analysis_chart(pd.DataFrame(), "rotten_chestnuts_fungal")
 
-        filtered_df = pd.read_json(filtered_json, orient="split")
+        filtered_df = pd.read_json(io.StringIO(filtered_json), orient="split")
         return create_rot_analysis_chart(filtered_df, "rotten_chestnuts_fungal")
 
     @app.callback(
@@ -188,7 +189,7 @@ def register_callbacks(app, df):
         if not filtered_json:
             return create_rot_analysis_chart(pd.DataFrame(), "rotten_chestnuts_larva")
 
-        filtered_df = pd.read_json(filtered_json, orient="split")
+        filtered_df = pd.read_json(io.StringIO(filtered_json), orient="split")
         return create_rot_analysis_chart(filtered_df, "rotten_chestnuts_larva")
 
     @app.callback(
@@ -204,7 +205,7 @@ def register_callbacks(app, df):
         if not filtered_json:
             return create_macronutrient_chart(pd.DataFrame(), value_col)
 
-        filtered_df = pd.read_json(filtered_json, orient="split")
+        filtered_df = pd.read_json(io.StringIO(filtered_json), orient="split")
         show_ind = show_individual == "individual"
         return create_macronutrient_chart(filtered_df, value_col, show_individual=show_ind)
 
@@ -220,7 +221,7 @@ def register_callbacks(app, df):
         if not filtered_json:
             return html.Div("No data available")
 
-        filtered_df = pd.read_json(filtered_json, orient="split")
+        filtered_df = pd.read_json(io.StringIO(filtered_json), orient="split")
         summary, error = create_data_table(filtered_df, value_col)
 
         if error:
@@ -259,7 +260,7 @@ def register_callbacks(app, df):
         if not n_clicks or not filtered_json:
             return None
 
-        filtered_df = pd.read_json(filtered_json, orient="split")
+        filtered_df = pd.read_json(io.StringIO(filtered_json), orient="split")
 
         # Get relevant columns for the selected variable
         cols = get_variable_columns(value_col)
