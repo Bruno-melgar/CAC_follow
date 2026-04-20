@@ -1,11 +1,14 @@
 """
 CAC Dashboard - Plotly Dash application for chestnut controlled atmosphere chamber visualization.
 """
+import sys
+import os
+sys.path.insert(0, os.path.dirname(__file__))
 import pandas as pd
 import dash
 import dash_bootstrap_components as dbc
 from dash import dcc, html
-import os
+
 
 # Import components and callbacks
 from components.filters import (
