@@ -1,0 +1,216 @@
+/* CAC Dashboard Styles */
+
+/* Global styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Topbar container */
+.topbar-container {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Card styles */
+.card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.card-header {
+    background-color: #ffffff;
+    border-bottom: 2px solid #e9ecef;
+    font-weight: 600;
+}
+
+/* KPI Cards */
+.card-subtitle {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-text {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* Dropdown styles */
+.Select-control {
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+}
+
+.Select-control:hover {
+    border-color: #0077bb;
+}
+
+.Select--focused .Select-control {
+    border-color: #0077bb;
+    box-shadow: 0 0 0 0.2rem rgba(0, 119, 187, 0.25);
+}
+
+/* Range slider */
+.rc-slider {
+    margin: 10px 0;
+}
+
+.rc-slider-handle {
+    border-color: #0077bb;
+}
+
+.rc-slider-handle:active {
+    border-color: #005588;
+    box-shadow: 0 0 5px #0077bb;
+}
+
+.rc-slider-track {
+    background-color: #0077bb;
+}
+
+/* Radio items */
+.form-check-input:checked {
+    background-color: #0077bb;
+    border-color: #0077bb;
+}
+
+/* Tab styles */
+.nav-tabs .nav-link {
+    border: none;
+    color: #495057;
+    font-weight: 500;
+    padding: 12px 20px;
+}
+
+.nav-tabs .nav-link.active {
+    color: #0077bb;
+    border-bottom: 3px solid #0077bb;
+    background-color: transparent;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #0077bb;
+}
+
+/* Chart containers */
+.chart-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Table styles */
+.table {
+    margin-bottom: 0;
+}
+
+.table thead {
+    background-color: #f8f9fa;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 119, 187, 0.05);
+}
+
+/* Header/Title area */
+.dashboard-header {
+    background: linear-gradient(135deg, #0077bb 0%, #005588 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-weight: 700;
+}
+
+.dashboard-header p {
+    margin: 5px 0 0 0;
+    opacity: 0.9;
+}
+
+/* Loading state */
+.dash-loading {
+    color: #0077bb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dashboard-header {
+        padding: 15px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .card-text {
+        font-size: 1.25rem;
+    }
+
+    .nav-tabs .nav-link {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Filter labels */
+label {
+    font-weight: 500;
+    color: #495057;
+}
+
+/* Plotly chart styling overrides */
+.js-plotly-plot .plotly .main-svg {
+    background-color: transparent;
+}
+
+.js-plotly-plot .plotly .plot-background {
+    fill: transparent;
+}
+
+/* Tooltip styling */
+.hovertext {
+    font-family: inherit;
+    font-size: 12px;
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #0077bb;
+    border-color: #0077bb;
+}
+
+.btn-primary:hover {
+    background-color: #005588;
+    border-color: #005588;
+}
+
+/* Alert styles */
+.alert-info {
+    background-color: #e7f3ff;
+    border-color: #b3d9ff;
+    color: #005588;
+}
+
+/* Footer */
+.dashboard-footer {
+    text-align: center;
+    padding: 20px;
+    color: #6c757d;
+    font-size: 0.85rem;
+    margin-top: 40px;
+}
